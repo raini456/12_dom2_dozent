@@ -1,0 +1,103 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+#myGame > #canvas {
+    position: relative;
+    margin: 10px auto;
+    width: 990px;
+    height: 450px;
+    /*border: 1px solid #000;*/
+    box-shadow: 1px 1px 1px 1px #666;
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-size: cover;
+    overflow: hidden;
+}
+@keyframes ani {
+    0% {
+        transform: translate(5px,-5px) scale(0.8) rotateY(0deg); 
+    }
+    50% {
+        transform:  translate(-5px,5px) scale(1.0) rotateY(180deg);
+    }
+    100% {
+        transform:  translate(5px,-5px) scale(0.8) rotateY(180deg);
+    }
+}
+@keyframes move {
+    0% {
+        transform: translate(0px,0px); 
+    }
+    29% {
+        transform:  translate(-799px,0px) rotateY(0deg);   
+    }
+    30% {
+        transform:  translate(-800px,0px) rotateY(180deg);   
+    }
+    99% {
+        transform:  translate(799px,0px) rotateY(180deg);
+    }
+    100% {
+        transform:  translate(800px,0px) rotateY(0deg);
+    }
+}
+#myGame > #canvas img  {
+    height: 50px;
+    position: absolute;
+
+}
+#myGame > #canvas img[data-animation="ani"] {
+    /*animation: 3s ani alternate ease-in-out infinite 0s;*/
+    animation: 3s ease-in-out 0s infinite alternate both ani;
+
+}
+#myGame > #canvas img[data-animation="move"] {
+    animation: move 10s linear 0s 1 both alternate  ;
+}
+#myGame > #canvas img[data-role="killer" ] {
+    position: absolute;
+    border:1px solid green;
+    width:10rem;
+    height:5rem;
+    left: 50%;
+    top: 50%;
+}
+#myGame > #canvas img[data-role="runner" ] {
+    position: absolute;
+    width:5rem;
+    height:5rem;
+    left: 0px;
+    bottom:-6px;
+}
+
+
+
+
+
+
+
+
+#myGame > #backgrounds,
+#myGame > #icons {
+    width: 990px;
+    margin: auto;
+    padding: 10px 0;
+    box-sizing: border-box;
+}
+
+#myGame > #backgrounds > img,
+#myGame > #icons > img {
+    height: 50px;
+    cursor: pointer;
+    box-shadow: 0 0 1px 1px #eee;
+}
+
+#myGame > #icons > img:hover {
+    box-shadow: 0 0 1px 1px #333;
+}
+#myGame > #icons > img.active {
+    box-shadow: 0 0 1px 1px #333;
+}
+
